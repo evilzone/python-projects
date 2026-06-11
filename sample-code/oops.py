@@ -13,7 +13,7 @@ Factory().hello()
 obj = Factory()
 print(obj.a)
 obj.hello()
-"""
+
 class Factory:
 
     def __init__(self, material, zips, pockets):
@@ -30,3 +30,13 @@ campus = Factory("nylon", 3, 3)
 
 print(campus.pockets)
 print(campus.show())
+"""
+class Animal:
+    name = "lion" #class attribute
+    
+    def __init(self, age):
+        self.age = age #instance attribute
+
+    def instance_method(self): #instance method
+        print("instance method")
+        
