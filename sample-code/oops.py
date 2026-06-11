@@ -53,9 +53,12 @@ obj = Animal(12)
 obj.instance_method()
 obj.hello()
 obj.static_method()
-"""
+
+
 class Parent: #parent class / super class
+    
     a = 12
+
     def show(self):
         print("inside the show method")
 
@@ -66,3 +69,28 @@ obj = Parent()
 print(obj.a)
 obj1 = Child()
 obj1.show()
+
+"""
+
+class Animal:
+
+    def __init__(self, name):
+        self.name = name
+
+    def show(self):
+        print(f"hello your name is {self.name}")
+
+class Human(Animal):
+
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+    
+    def show(self):
+        print(f"hello your name is {self.name} age is {self.age}")
+
+animal = Animal("lion")
+human = Human("abhinav",12)
+
+animal.show()
+human.show()
