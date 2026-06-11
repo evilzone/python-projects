@@ -70,8 +70,8 @@ print(obj.a)
 obj1 = Child()
 obj1.show()
 
-"""
 
+#inheritance
 class Animal:
 
     def __init__(self, name):
@@ -94,3 +94,44 @@ human = Human("abhinav",12)
 
 animal.show()
 human.show()
+
+
+#multiple inheritance
+class Animal:
+
+    def __init__(self, name):
+        pass
+
+class Human:
+
+    def __init__(self, name, age):
+        pass
+
+class Robot(Human, Animal):
+    name = "charlie"
+
+obj = Robot("abhi", 12)
+
+"""
+
+#multi-level inheritance
+class Factory:
+
+    def __init__(self, material, zips):
+        self.material = material
+        self.zips = zips
+
+class BhopalFactory(Factory):
+
+    def __init__(self, material, zips, color):
+        self.material = material
+        self.zips = zips
+        self.color = color
+
+class PuneFactory(BhopalFactory):
+
+    def __init__(self, material, zips, color, pockets):
+        self.material = material
+        self.zips = zips
+        self.color = color
+        self.pockets = pockets
