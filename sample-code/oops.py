@@ -112,7 +112,6 @@ class Robot(Human, Animal):
 
 obj = Robot("abhi", 12)
 
-"""
 
 #multi-level inheritance
 class Factory:
@@ -135,3 +134,102 @@ class PuneFactory(BhopalFactory):
         self.zips = zips
         self.color = color
         self.pockets = pockets
+
+
+
+#polymorphism
+#method overriding
+class Animal:
+    
+    def show(self):
+        print("this is Animal class show method")
+
+class Human(Animal):
+
+    def show(self):
+        print("this is Human class show method")
+
+obj = Human()
+obj.show()
+
+
+class Factory:
+    a = "test"
+
+    def show(self):
+        print("inside show method")
+
+class Bhopal(Factory):
+
+    def show2(self):
+        print(super().a)
+
+obj = Bhopal()
+obj.show2()
+
+
+#abstract class and abstract method
+from abc import ABC, abstractmethod
+
+class abstract(ABC):
+
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+class Square(abstract):
+
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        print("this is area method")
+
+    def perimeter(self):
+        print("this is perimeter method")
+
+class Circle(abstract):
+
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        print("this is area method")
+
+    def perimeter(self):
+        print("this is perimeter method")
+
+obj = Square(4)
+
+"""
+
+# dunder methods
+class Animal:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"name of the animal is {self.name}"
+
+    def __add__(self, other):
+        sum = 0
+
+        for i in other:
+            sum += i.age
+
+        return f"sum of ages is {self.age + sum}"
+
+obj = Animal("lion", 12)
+obj2 = Animal("dolphin", 13)
+obj3 = Animal("Shark", 12)
+
+print(obj)
+print(obj2)
+
+print(obj+(obj2,obj3))
