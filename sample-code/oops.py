@@ -205,7 +205,7 @@ class Circle(abstract):
 
 obj = Square(4)
 
-"""
+
 
 # dunder methods
 class Animal:
@@ -233,3 +233,48 @@ print(obj)
 print(obj2)
 
 print(obj+(obj2,obj3))
+
+
+class Animal:
+
+    @property
+    def show(self):
+        print("inside show method")
+
+obj = Animal()
+obj.show
+
+
+#decorator
+def decorate(func):
+    def wrapper(a, b):
+        print("before addition")
+        func(a, b)
+        print("after addition")
+    return wrapper
+
+@decorate
+def addition(a, b):
+    print(f"addition of a and b is {a+b}")
+
+addition(12,13)
+
+
+def addition(*args):
+    sum = 0
+    for i in args:
+        sum += i
+
+    print(f"sum of args elements is {sum}")
+
+addition(1,2,3,4,5,6,2,3)
+
+"""
+
+def information(**kwargs):
+    print("your information is: \n\n")
+
+    for i in kwargs:
+        print(f"{i} : {kwargs[i]}")
+
+information(name="abhinav", age=12, job="AI/ML")
