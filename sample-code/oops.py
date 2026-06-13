@@ -278,3 +278,36 @@ def information(**kwargs):
         print(f"{i} : {kwargs[i]}")
 
 information(name="abhinav", age=12, job="AI/ML")
+
+l = [i for i in range(1, 21) if i % 2 == 0]
+print(l)
+
+dict = {i : i*i for i in range(1,10)}
+print(dict)
+
+unique_even_squares = {i*i for i in range(10) if i%2==0}
+print(unique_even_squares)
+
+addition = lambda a,b : a+b
+
+print(addition(12,12))
+
+ans = lambda a : "even" if a%2==0 else "odd"
+
+print(ans(2))
+
+a = [1,2,3,4]
+
+result = map(lambda x : x*2, a)
+print(list(result))
+
+def even(x):
+    if x%2==0:
+        return True
+    else:
+        return False
+
+a = [1,2,3,4,5,6,7,8,9,10]
+#result = filter(even,a)
+result = filter(lambda x : True if x%2==0 else False, a)
+print(list(result))
